@@ -99,7 +99,7 @@ Một website bán hàng trực tuyến được xây dựng bằng Java Spring 
 
 ---
 
-## 🌐 Endpoints
+## 🌐 Điểm cuối
 
 | URL | Chức năng |
 |-----|-----------|
