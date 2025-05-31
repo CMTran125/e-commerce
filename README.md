@@ -1,22 +1,122 @@
-## Bắt đầu nhanh
+# 🛒 E-Commerce Website - Java Spring Boot
 
-1. Clone (sao chép) repository về máy
+Một website bán hàng trực tuyến được xây dựng bằng Java Spring Boot theo mô hình MVC, sử dụng cơ sở dữ liệu MySQL. Dự án bao gồm các chức năng cơ bản như hiển thị sản phẩm, đăng nhập/đăng ký, quản lý giỏ hàng, quản lý người dùng và quản trị hệ thống.
 
-2. Mở project bằng IDE của bạn: **Eclipse IDE**  
-   - Hãy đảm bảo IDE mở project dưới dạng **Maven** và nhận diện đúng đây là một project **Spring Boot**. Ngoài ra, bạn cần thiết lập đúng thư mục làm việc của project để Spring Boot có thể tìm thấy các trang web (giao diện) cần hiển thị.
+---
 
-3. Đảm bảo bạn đang ở trong thư mục `JtProject`
+## 📌 Công nghệ sử dụng
 
-4. Cấu hình kết nối cơ sở dữ liệu trong file `application.properties` (xem phần **Database** bên dưới để biết thêm chi tiết)
+- 💻 Java 11
+- ⚙️ Spring Boot
+- 🧱 Spring MVC
+- 🔐 Spring Security (nếu có)
+- 💾 MySQL
+- 🛠 JDBC / JPA / Hibernate
+- 📦 Maven
+- 🎨 JSP, JSTL, Bootstrap 5
+- 🧠 Eclipse IDE
 
-5. Chạy project (bằng cách chạy phương thức `main` trong file `JtSpringProjectApplication.java`)
+---
 
-6. Mở trình duyệt và truy cập [http://localhost:8080/](http://localhost:8080/)  
+## 🚀 Cài đặt & chạy dự án
 
-   - Nếu bạn đã chạy script `basedata.sql` trên cơ sở dữ liệu, bạn có thể đăng nhập với tài khoản quản trị như sau:  
-     - **Tên đăng nhập:** `cmtran`  
-     - **Mật khẩu:** `cmtran`
+### Yêu cầu môi trường:
+- Java JDK 11+
+- MySQL Server
+- Eclipse IDE (hoặc IntelliJ)
+- Maven
 
-   - Đăng nhập như một người dùng bình thường:  
-     - **Tên đăng nhập:** `minhtc`  
-     - **Mật khẩu:** `minhtc`
+### Các bước triển khai:
+1. **Clone project:**
+   ```bash
+   git clone https://github.com/tên-tài-khoản-của-bạn/e-commerce.git
+
+2. **Import project vào Eclipse:**
+   ```bash
+   File -> Import -> Existing Maven Project
+
+3. **Tạo database trong MySQL:**
+   ```bash
+   CREATE DATABASE ecommjava;
+
+4. **Cấu hình kết nối trong** `application.properties`
+   ```bash
+   db.url=jdbc:mysql://[địa chỉ ip của db]:[cổng của db]/ecommjava?createDatabaseIfNotExist=true
+   db.username=[tên người dùng]
+   db.password=[mật khẩu]
+5. **Chạy project:** Chạy phần `main` trong `JtSpringProjectApplication.java`
+
+---
+
+## ⚙️ Cấu trúc thư mục chính:
+```
+   JtSpringProject/
+      ├── pom.xml
+      ├── mvnw, mvnw.cmd
+      ├── basedata.sql
+      ├── src/
+      │   ├── main/
+      │   │   ├── java/
+      │   │   │   └── com/
+      │   │   │       └── jtspringproject/
+      │   │   │           └── JtSpringProject/
+      │   │   │               ├── JtSpringProjectApplication.java
+      │   │   │               ├── configuration/
+      │   │   │               ├── controller/
+      │   │   │               ├── dao/
+      │   │   │               ├── models/
+      │   │   │               └── services/
+      │   │   ├── resources/
+      │   │   │   ├── application.properties
+      │   │   │   └── Product Images/
+      │   │   └── webapp/
+      │   │       ├── images/
+      │   │       └── views/
+      │   └── test/
+      │       └── java/
+      │           └── com.jtspringproject.JtSpringProject/
+```
+---
+
+## 💡 Các chức năng chính:
+- Đăng ký / Đăng nhập người dùng
+- Hiển thị danh sách sản phẩm
+- Giỏ hàng
+- Trang quản trị: quản lý sản phẩm, loại hàng, người dùng
+- Bảo mật bằng Spring Security
+
+---
+
+## 🧪 Tài khoản mẫu:
+(Nếu bạn chạy tập lệnh `basedata.sql` trên cơ sở dữ liệu, bạn có thể đăng nhập bằng thông tin đăng nhập sau với tư cách là quản trị viên; nếu không, bạn sẽ phải tự tạo người dùng quản trị viên trong cơ sở dữ liệu)
+- Admin:
+   - Username: `cmtran`
+   - Password: `cmtran`
+- User:
+   - Username: `minhtc`
+   - Password: `minhtc`
+
+
+---
+
+## 🌐 Endpoints
+
+| URL | Chức năng |
+|-----|-----------|
+| [`http://localhost:8080/`](http://localhost:8080/) | Trang chủ |
+| [`http://localhost:8080/register`](http://localhost:8080/register) | Đăng ký tài khoản |
+| [`http://localhost:8080/login`](http://localhost:8080/login) | Đăng nhập tài khoản |
+| [`http://localhost:8080/admin/products`](http://localhost:8080/admin/products) | Quản lý sản phẩm |
+| [`http://localhost:8080/admin/customers`](http://localhost:8080/admin/customers) | Quản lý người dùng |
+| [`http://localhost:8080/admin/categories`](http://localhost:8080/admin/categories) | Quản lý danh mục |
+| [`http://localhost:8080/admin/Dashboard`](http://localhost:8080/admin/Dashboard) | Dashboard thống kê |
+
+---
+
+## 📚 Tài liệu tham khảo
+- [`Spring Boot Documentation`](https://spring.io/projects/spring-boot)
+- [`JSP & JSTL`](https://www.tutorialspoint.com/jsp/index.htm)
+- [`MySQL Documentation`](https://dev.mysql.com/doc/)
+- [`Bootstrap`](https://getbootstrap.com/)
+
+---
