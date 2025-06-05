@@ -9,7 +9,6 @@ Một website bán hàng trực tuyến được xây dựng bằng Java Spring 
 - 💻 Java 11
 - ⚙️ Spring Boot
 - 🧱 Spring MVC
-- 🔐 Spring Security (nếu có)
 - 💾 MySQL
 - 🛠 JDBC / JPA / Hibernate
 - 📦 Maven
